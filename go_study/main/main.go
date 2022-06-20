@@ -12,4 +12,5 @@ func main01(){
 
 }
 func main() {
+	fmt.Println("222")
 }
