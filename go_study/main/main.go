@@ -1,16 +1,18 @@
 package main
-
 import "fmt"
-
-func main01(){
-	fmt.Println("zhaowenjie ain function")
-	fmt.Println("zhaowenjie ain function")
-	fmt.Println("zhaowenjie ain function")
-	fmt.Println("zhaowenjie ain function")
-	fmt.Println("zhaowenjie ain function")
-	fmt.Println("zhaowenjie ain function")
-
+func main () {
+defer func () {
+if err :=recover(); err !=nil {
+	fmt.Println(err)
 }
-func main() {
-	fmt.Println("222")
+} ()
+//
+defer func() {
+panic("first defer panic")
+} ()
+defer func () {
+panic (" second defer panic ")
+} ()
+panic ("main body panic")
 }
+
